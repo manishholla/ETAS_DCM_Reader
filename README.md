@@ -21,7 +21,7 @@ The code only accept DCM file extension. Any other format will not be parsed by 
 
 When the code is run in the Python supported IDE, a pop-up will open asking the user to select the DCM. 
 
-[image tkinter]
+![tkinter_pop-up](https://github.com/manishholla/ETAS_DCM_Reader/assets/29548788/4819073a-a14e-457a-99a9-84e253b58b4b)
 
 Post selecting the DCM file, the code reads the file line-by-line and stores the information in Pandas Dataframe. At the end of the file (after the last line), the code stops and outputs the stored data in multiple ways. They are mentioned below.
 
