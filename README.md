@@ -15,7 +15,7 @@ It follows the standard ASCET DAMOS format and is coded as per ETAS Technical Fo
 ## Note 
 ![Warning-PNG-Clipart-removebg-preview](https://github.com/manishholla/ETAS_DCM_Reader/assets/29548788/f5f8c2e3-e3bc-427f-a864-1062e2fa9142)
 
-The code only accept DCM file extension. Any other format will not be parsed by the code.
+The code only accepts DCM file extension. Any other format will not be parsed by the code.
 
 ## Using ETAS_DCM_Reader
 
