@@ -63,7 +63,6 @@ extracted_data = data_df.drop(0).to_json(orient="records")
 
 # Print the extracted data
 print(extracted_data)
-print(data_df)
 print(labels)
 print(functions)
 print(dcm_name)
