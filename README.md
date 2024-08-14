@@ -1,4 +1,4 @@
-# ETAS_DCM_Reader
+# ETAS DCM Reader
 
 ## About ETAS_DCM_Reader
 
