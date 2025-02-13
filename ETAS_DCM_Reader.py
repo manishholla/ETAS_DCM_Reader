@@ -52,6 +52,9 @@ dcm_file = select_dcm_file()
 # Retrieves the name of the DCM file
 dcm_name = os.path.basename(dcm_file)
 
+# Extract data with respective global variables
+data_df = extract_data(dcm_file)
+
 # Filter out None values and store 'Variable' column in a separate variable
 labels = ', '.join(filter(None, data_df['Variable'].tolist()))
 
