@@ -1,6 +1,6 @@
-# ETAS DCM Reader
+# ETAS DCM Reader v1
 
-## About ETAS_DCM_Reader
+## About ETAS_DCM_Reader v1
 
 ETAS_DCM_Reader is a code written in python to read DCM file and outputs necessary data:
   1. Extracted Data- Data containing the variable names, function names and the field data with respect to the variables in JSON list format enclosed in square brackets ("[]").
