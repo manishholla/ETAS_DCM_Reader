@@ -4,7 +4,6 @@
 
 This is a Python based script that extracts data from `.dcm` files (commonly used in automotive calibration) and outputs the results in JSON format. It supports extracting all data, functions, or variables separately based on user-specified modes.
 
-
 ## ETAS DCM Documentation
 
 It follows the standard ASCET DAMOS format and is coded as per ETAS Technical Format. You may find more information by visiting here: [DCM File Formats Technical Note](https://www.etas.com/download-center-files/products_ASCET_Software_Products/TechNote_DCM_File_Formats.pdf)
