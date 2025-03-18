@@ -71,21 +71,47 @@ def extract_data(dcm_file, mode='all'):
         functions = ', '.join(sorted(list(set([data['Function'] for data in extracted_data]))))
         variables = ', '.join(sorted(list(set([data['Variable'] for data in extracted_data]))))
 
+        # Return JSON-formatted strings directly
         if mode == 'all':
-            return {
+            output = {
                 "DCM Name": os.path.basename(dcm_file),
                 "Extracted Data": extracted_data
             }
+            return json.dumps(output, indent=4)
         elif mode == 'functions':
-            return {
+            output = {
                 "DCM Name": os.path.basename(dcm_file),
                 "DCM Functions": functions
             }
+            return json.dumps(output, indent=4)
         elif mode == 'variables':
-            return {
+            output = {
                 "DCM Name": os.path.basename(dcm_file),
                 "DCM Variables": variables
             }
+            return json.dumps(output, indent=4)
         else:
             raise ValueError("Invalid mode. Use 'all', 'functions', or 'variables'.")
+            
 
+# Example Usage
+
+def main():
+    dcm_file = select_dcm_file()
+
+    # Example usage of different modes
+    print("Extracting all data:")
+    output_all = extract_data(dcm_file, mode='all')
+    print(output_all)
+
+    print("\nExtracting functions only:")
+    output_functions = extract_data(dcm_file, mode='functions')
+    print(output_functions)
+
+    print("\nExtracting variables only:")
+    output_variables = extract_data(dcm_file, mode='variables')
+    print(output_variables)
+
+
+if __name__ == "__main__":
+    main()
