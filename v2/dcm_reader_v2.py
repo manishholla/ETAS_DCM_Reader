@@ -9,9 +9,9 @@ def select_dcm_file():
     return dcm_file
 
 
-def extract_data(dcm_file):
+def extract_data(dcm_file, mode='all'):
     keywords = ['FESTWERT', 'KENNFELD', 'STUETZSTELLENVERTEILUNG', 'KENNLINIE', 'GRUPPENKENNFELD', 'FESTWERTEBLOCK',
-            'TEXTSTRING', 'FESTKENNLINIE', 'FESTKENNFELD', 'GRUPPENKENNLINIE']
+                'TEXTSTRING', 'FESTKENNLINIE', 'FESTKENNFELD', 'GRUPPENKENNLINIE']
     extracted_data = []
     variable = None
     description = None
@@ -64,24 +64,28 @@ def extract_data(dcm_file):
                 }
             })
 
+        # Filter out entries where Function is None
         extracted_data = [data for data in extracted_data if data['Function'] is not None]
 
+        # Prepare separate outputs based on mode
         functions = ', '.join(sorted(list(set([data['Function'] for data in extracted_data]))))
         variables = ', '.join(sorted(list(set([data['Variable'] for data in extracted_data]))))
 
-        return {
-            "DCM Name": os.path.basename(dcm_file),
-            "Extracted Data": extracted_data,
-            "DCM Variables": variables,
-            "DCM Functions": functions
-        }
+        if mode == 'all':
+            return {
+                "DCM Name": os.path.basename(dcm_file),
+                "Extracted Data": extracted_data
+            }
+        elif mode == 'functions':
+            return {
+                "DCM Name": os.path.basename(dcm_file),
+                "DCM Functions": functions
+            }
+        elif mode == 'variables':
+            return {
+                "DCM Name": os.path.basename(dcm_file),
+                "DCM Variables": variables
+            }
+        else:
+            raise ValueError("Invalid mode. Use 'all', 'functions', or 'variables'.")
 
-
-def main():
-    dcm_file = select_dcm_file()
-    output_json = extract_data(dcm_file)
-    print(json.dumps(output_json, indent=4))
-
-
-if __name__ == "__main__":
-    main()
