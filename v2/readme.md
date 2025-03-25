@@ -130,6 +130,6 @@ Running the script produces:
 - If you need quote stripping, modify the parsing logic in `extract_data()`.
 - **Error Handling**: Basic mode validation is included; expand as needed for robustness.
 
-## Contributing
+## Contribute
 
 Feel free to fork this project, submit pull requests, or report issues if you encounter bugs or have suggestions!
